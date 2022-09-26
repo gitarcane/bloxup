@@ -37,7 +37,7 @@ crashdiv.style.display = "block";
 
 }
 
-var items = Array('anyone else hitting?', 'WWWWWWWW', 'W WIN', 'NO I LOST', 'OMG', 'wtf', 'yo', 'tip me 5', 'tip me 5 and I will triple', 'give me robux', 'cashout now', 'crash is hitting');
+var items = Array('anyone else hitting?', 'WWWWWWWW', 'W WIN', 'NO I LOST', 'OMG', 'wtf', 'yo', 'tip me 5', 'tip me 5 and I will triple', 'give me robux', 'cashout now', 'crash is hitting', 'when does it end?', 'FIRST TO SAY 123 gets 10k', 'who wants free robux?', '123', 'I just made 2000???', 'LOL', '25mil BET?', 'EASYYY', 'way better than bloxflip', 'ong', 'this site is crazy wtffff', 'AWIFBWAUFBAW', 'When is the giveaway', 'join my discord guys', 'Add me on roblox', 'Mines is hitting rn', 'I just made 5040 on mines', 'IWAONFOIANW');
 
 
 
@@ -45,8 +45,10 @@ var items = Array('anyone else hitting?', 'WWWWWWWW', 'W WIN', 'NO I LOST', 'OMG
 
 
 var interval = setInterval(function() { 
+
+
 var item = document.createElement('li');
        item.textContent = items[Math.floor(Math.random()*items.length)];
        $( "#messages" ).append(item);
 
-}, 1000);
+}, 500);

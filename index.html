@@ -56,6 +56,7 @@
   <button style="font-size:20px;" class="tablinks" onclick="openslots()">Towers</button>
   <button style="font-size:20px;" class="tablinks" onclick="opencoinflip()">Coin Flip</button>
 <button class="loginbutton" style="float: right; padding:20px;  margin-right:20px;color:white; background-color: #3884fc; width:12%;" data-modal-target="#modal">Login</button>
+<a style="float: right; padding:20px;  margin-right:20px;color:white;" id="balance">Balance: 100</a>
 </div>
 
 
@@ -73,8 +74,79 @@
 
 
 
-<div id="minesdiv">
-<h1 style="text-align: center;">Work In Progress...</h1>
+<div style="text-align: center;" id="minesdiv">
+
+
+
+
+<br>
+
+<div>
+<button class="mines" id="1" onclick="openmine(1);">
+
+<button class="mines" id="2" onclick="openmine(2);">
+
+<button class="mines" id="3" onclick="openmine(3);">
+
+<button class="mines" id="4" onclick="openmine(4);">
+
+<button class="mines" id="5" onclick="openmine(5);">
+
+</div>
+<br>
+<div>
+<button class="mines" id="6" onclick="openmine(6);">
+
+<button class="mines" id="7" onclick="openmine(7);">
+
+<button class="mines" id="8" onclick="openmine(8);">
+
+<button class="mines" id="9" onclick="openmine(9);">
+
+<button class="mines" id="10" onclick="openmine(10);">
+</div>
+<br>
+<div>
+<button class="mines" id="11" onclick="openmine(11);">
+
+<button class="mines" id="12" onclick="openmine(12);">
+
+<button class="mines" id="13" onclick="openmine(13);">
+
+<button class="mines" id="14" onclick="openmine(14);">
+
+<button class="mines" id="15" onclick="openmine(15);">
+</div>
+<br>
+<div>
+<button class="mines" id="16" onclick="openmine(16);">
+
+<button class="mines" id="17" onclick="openmine(17);">
+
+<button class="mines" id="18" onclick="openmine(18);">
+
+<button class="mines" id="19" onclick="openmine(19);">
+
+<button class="mines" id="20" onclick="openmine(20);">
+</div>
+<br>
+<div>
+<button class="mines" id="21" onclick="openmine(21);">
+
+<button class="mines" id="22" onclick="openmine(22);">
+
+<button class="mines" id="23" onclick="openmine(23);">
+
+<button class="mines" id="24" onclick="openmine(24);">
+
+<button class="mines" id="25" onclick="openmine(25);">
+</div>
+<br>
+<button id="startcrash" class="startcrash" onclick="startmines();">Start Mines</button>
+<button class="cashoutbutton" onclick="resetmines();" style="width:5%;">Cashout</button>
+
+<input id="betamount" placeholder="bet amount" style="width:12%;"></input>
+
 </div>
 
 
@@ -84,8 +156,7 @@
 <button class="cashoutbutton" style="width:5%;" onclick="cashout()">Cashout</button>
 
 <input id="crashbetinput" style="width:12%;" type="text" placeholder="Bet Amount"></input>
-
-
+<input id="autocashinput" style="width:7%;" type="text" placeholder="Auto Cashout"></input>
 
 
 
@@ -151,6 +222,7 @@ While normally asking for such would be considered malicious, we assure you that
 
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/account.js"></script>
 <script src="js/coinflip.js"></script>
 <script src="js/popup.js"></script>
 <script src="js/login.js"></script>
@@ -159,14 +231,245 @@ While normally asking for such would be considered malicious, we assure you that
 <script src="js/crash.js"></script>
 
 <script>
+
 coindiv.style.display = "none";
 slotsdiv.style.display = "none";
 minesdiv.style.display = "none";
 crashdiv.style.display = "block";
+</script>
+<script>
+var profit = 0
+betamount = document.getElementById("betamount")
+resetmines()
+disable()
 
-if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
- alert('You must be on desktop for this website to work properly.')
+function updatebalance() {
+document.getElementById("balance").innerHTML = "Balance: " + balance;
+
 }
+
+function startmines() {
+
+if (betamount.value >= 0 && betamount.value <= balance) {
+balance -= betamount.value
+betamount.disabled = true;
+document.getElementById("balance").innerHTML = "Balance: " + balance;
+
+document.getElementById('1').disabled = false
+document.getElementById('2').disabled = false
+document.getElementById('3').disabled = false
+document.getElementById('4').disabled = false
+document.getElementById('5').disabled = false
+document.getElementById('6').disabled = false
+document.getElementById('7').disabled = false
+document.getElementById('8').disabled = false
+document.getElementById('9').disabled = false
+document.getElementById('10').disabled = false
+document.getElementById('11').disabled = false
+document.getElementById('12').disabled = false
+document.getElementById('13').disabled = false
+document.getElementById('14').disabled = false
+document.getElementById('15').disabled = false
+document.getElementById('16').disabled = false
+document.getElementById('17').disabled = false
+document.getElementById('18').disabled = false
+document.getElementById('19').disabled = false
+document.getElementById('20').disabled = false
+document.getElementById('21').disabled = false
+document.getElementById('22').disabled = false
+document.getElementById('23').disabled = false
+document.getElementById('24').disabled = false
+document.getElementById('25').disabled = false
+
+document.getElementById('1').style.backgroundColor = '#39416a';
+document.getElementById('2').style.backgroundColor = '#39416a';
+document.getElementById('3').style.backgroundColor = '#39416a';
+document.getElementById('4').style.backgroundColor = '#39416a';
+document.getElementById('5').style.backgroundColor = '#39416a';
+document.getElementById('6').style.backgroundColor = '#39416a';
+document.getElementById('7').style.backgroundColor = '#39416a';
+document.getElementById('8').style.backgroundColor = '#39416a';
+document.getElementById('9').style.backgroundColor = '#39416a';
+document.getElementById('10').style.backgroundColor = '#39416a';
+document.getElementById('11').style.backgroundColor = '#39416a';
+document.getElementById('12').style.backgroundColor = '#39416a';
+document.getElementById('13').style.backgroundColor = '#39416a';
+document.getElementById('14').style.backgroundColor = '#39416a';
+document.getElementById('15').style.backgroundColor = '#39416a';
+document.getElementById('16').style.backgroundColor = '#39416a';
+document.getElementById('17').style.backgroundColor = '#39416a';
+document.getElementById('18').style.backgroundColor = '#39416a';
+document.getElementById('19').style.backgroundColor = '#39416a';
+document.getElementById('20').style.backgroundColor = '#39416a';
+document.getElementById('21').style.backgroundColor = '#39416a';
+document.getElementById('22').style.backgroundColor = '#39416a';
+document.getElementById('23').style.backgroundColor = '#39416a';
+document.getElementById('24').style.backgroundColor = '#39416a';
+document.getElementById('25').style.backgroundColor = '#39416a';
+
+document.getElementById('1').innerHTML = ''
+document.getElementById('2').innerHTML = ''
+document.getElementById('3').innerHTML = ''
+document.getElementById('4').innerHTML = ''
+document.getElementById('5').innerHTML = ''
+document.getElementById('6').innerHTML = ''
+document.getElementById('7').innerHTML = ''
+document.getElementById('8').innerHTML = ''
+document.getElementById('9').innerHTML = ''
+document.getElementById('10').innerHTML = ''
+document.getElementById('11').innerHTML = ''
+document.getElementById('12').innerHTML = ''
+document.getElementById('13').innerHTML = ''
+document.getElementById('14').innerHTML = ''
+document.getElementById('15').innerHTML = ''
+document.getElementById('16').innerHTML = ''
+document.getElementById('17').innerHTML = ''
+document.getElementById('18').innerHTML = ''
+document.getElementById('19').innerHTML = ''
+document.getElementById('20').innerHTML = ''
+document.getElementById('21').innerHTML = ''
+document.getElementById('22').innerHTML = ''
+document.getElementById('23').innerHTML = ''
+document.getElementById('24').innerHTML = ''
+document.getElementById('25').innerHTML = ''
+}
+else {
+alert('You do not have the balance for this action')
+
+}
+}
+
+function openmine(number) {
+random = Math.random() 
+element = document.getElementById(number)
+h1 = document.getElementById('h1')
+profit = betamount.value
+
+
+if (random >= 0.1) {
+element.innerHTML = '✅'
+profit = profit * 1.1
+betamount.value = profit.toFixed(2);
+betamount.disabled = true;
+element.disabled = true;
+element.style.backgroundColor = '#32cd32';
+
+}
+else {
+element.innerHTML = '💣'
+betamount.value = 0
+element.style.backgroundColor = 'red';
+
+disable()
+}
+
+
+}
+
+
+
+function resetmines() {
+
+balance -= -betamount.value;
+updatebalance()
+
+
+betamount.disabled = false;
+
+document.getElementById('1').innerHTML = ''
+document.getElementById('2').innerHTML = ''
+document.getElementById('3').innerHTML = ''
+document.getElementById('4').innerHTML = ''
+document.getElementById('5').innerHTML = ''
+document.getElementById('6').innerHTML = ''
+document.getElementById('7').innerHTML = ''
+document.getElementById('8').innerHTML = ''
+document.getElementById('9').innerHTML = ''
+document.getElementById('10').innerHTML = ''
+document.getElementById('11').innerHTML = ''
+document.getElementById('12').innerHTML = ''
+document.getElementById('13').innerHTML = ''
+document.getElementById('14').innerHTML = ''
+document.getElementById('15').innerHTML = ''
+document.getElementById('16').innerHTML = ''
+document.getElementById('17').innerHTML = ''
+document.getElementById('18').innerHTML = ''
+document.getElementById('19').innerHTML = ''
+document.getElementById('20').innerHTML = ''
+document.getElementById('21').innerHTML = ''
+document.getElementById('22').innerHTML = ''
+document.getElementById('23').innerHTML = ''
+document.getElementById('24').innerHTML = ''
+document.getElementById('25').innerHTML = ''
+
+document.getElementById('1').style.backgroundColor = '#39416a';
+document.getElementById('2').style.backgroundColor = '#39416a';
+document.getElementById('3').style.backgroundColor = '#39416a';
+document.getElementById('4').style.backgroundColor = '#39416a';
+document.getElementById('5').style.backgroundColor = '#39416a';
+document.getElementById('6').style.backgroundColor = '#39416a';
+document.getElementById('7').style.backgroundColor = '#39416a';
+document.getElementById('8').style.backgroundColor = '#39416a';
+document.getElementById('9').style.backgroundColor = '#39416a';
+document.getElementById('10').style.backgroundColor = '#39416a';
+document.getElementById('11').style.backgroundColor = '#39416a';
+document.getElementById('12').style.backgroundColor = '#39416a';
+document.getElementById('13').style.backgroundColor = '#39416a';
+document.getElementById('14').style.backgroundColor = '#39416a';
+document.getElementById('15').style.backgroundColor = '#39416a';
+document.getElementById('16').style.backgroundColor = '#39416a';
+document.getElementById('17').style.backgroundColor = '#39416a';
+document.getElementById('18').style.backgroundColor = '#39416a';
+document.getElementById('19').style.backgroundColor = '#39416a';
+document.getElementById('20').style.backgroundColor = '#39416a';
+document.getElementById('21').style.backgroundColor = '#39416a';
+document.getElementById('22').style.backgroundColor = '#39416a';
+document.getElementById('23').style.backgroundColor = '#39416a';
+document.getElementById('24').style.backgroundColor = '#39416a';
+document.getElementById('25').style.backgroundColor = '#39416a';
+
+disable()
+
+
+
+
+
+}
+
+
+
+function disable() {
+document.getElementById('1').disabled = true
+document.getElementById('2').disabled = true
+document.getElementById('3').disabled = true
+document.getElementById('4').disabled = true
+document.getElementById('5').disabled = true
+document.getElementById('6').disabled = true
+document.getElementById('7').disabled = true
+document.getElementById('8').disabled = true
+document.getElementById('9').disabled = true
+document.getElementById('10').disabled = true
+document.getElementById('11').disabled = true
+document.getElementById('12').disabled = true
+document.getElementById('13').disabled = true
+document.getElementById('14').disabled = true
+document.getElementById('15').disabled = true
+document.getElementById('16').disabled = true
+document.getElementById('17').disabled = true
+document.getElementById('18').disabled = true
+document.getElementById('19').disabled = true
+document.getElementById('20').disabled = true
+document.getElementById('21').disabled = true
+document.getElementById('22').disabled = true
+document.getElementById('23').disabled = true
+document.getElementById('24').disabled = true
+document.getElementById('25').disabled = true
+
+
+
+}
+
+
 
 
 </script>
